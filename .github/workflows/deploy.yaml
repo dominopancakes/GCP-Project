@@ -7,8 +7,10 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest  # Workflow runs on Ubuntu virtual machines
+    
     steps:
-      - uses: actions/checkout@v2  # Checkout the code from the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v2  # Checkout the code from the repository
 
       - name: Configure Google Cloud  # Configure access to GCP
         uses: google-github-actions/setup-gcloud@v2  # Action to install gcloud and configure
