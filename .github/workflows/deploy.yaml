@@ -11,12 +11,15 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2  # Checkout the code from the repository
-
+        
+      - name: Setup Auth
+        uses: google-github-actions/auth@v2  # Authenticate with service account
+        with:
+          service_account_key: ${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}  # Secret name for service account key JSON
+      
       - name: Configure Google Cloud  # Configure access to GCP
         uses: google-github-actions/setup-gcloud@v2  # Action to install gcloud and configure
-        with:
-          service_account_key: ${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}  # Secret containing the service account key JSON
-
+       
       - name: Upload to Cloud Storage  # Upload website files to bucket
         run: |
           gsutil -m cp -r . gs://www.longboyscout.com/  
