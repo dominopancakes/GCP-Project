@@ -1,0 +1,23 @@
+name: Deploy Website
+
+on:
+  push:
+    branches: [ main ]  # Trigger on pushes to the main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest  # Workflow runs on Ubuntu virtual machines
+    steps:
+      - uses: actions/checkout@v2  # Checkout the code from the repository
+
+      - name: Configure Google Cloud  # Configure access to GCP
+        uses: google/cloud-actions/setup-gcloud@v0  # Action to install gcloud and configure
+        with:
+          service_account_key: ${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}  # Secret containing the service account key JSON
+
+      - name: Upload to Cloud Storage  # Upload website files to bucket
+        run: |
+          gsutil -m cp -r . gs://www.longboyscout.com/  
+          
+env:
+  GOOGLE_CLOUD_CREDENTIALS: ${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}  # Secret name for service account key
