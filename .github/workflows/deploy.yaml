@@ -10,12 +10,12 @@ jobs:
     
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2  # Checkout the code from the repository
+        uses: actions/checkout@v4  # Checkout the code from the repository
         
       - name: Setup Auth
         uses: google-github-actions/auth@v2  # Authenticate with service account
         with:
-          service_account_key: ${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}  # Secret name for service account key JSON
+            credentials_json: ${{ secrets.GOOGLE_CLOUD_CREDENTIALS }}  # Secret name for service account key JSON
       
       - name: Configure Google Cloud  # Configure access to GCP
         uses: google-github-actions/setup-gcloud@v2  # Action to install gcloud and configure
