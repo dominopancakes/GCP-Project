@@ -18,52 +18,42 @@
         <div><a href="#">Home</a></div>
         <div><a href="#">About</a></div>
         <div><a href="#">Contact</a></div>
-        <div><a href="#">Login</a></div>
+        <div><a href="http://www.longboyscout.com">Scout's page</a></div>
     </div>
 
     <h1>Welcome to Scout's website, it's just like Frankie's but a little looooonger</h1>
     <h2>Since Frankie covered the HTML tag basics, I'll talk about the next steps in your project.</h2>
-    <hr/>
-    <p id="hrtag"> Our aim is to demonstrate that you know the concepts of a CI/CD pipeline and common architecture, as well as building practical experience with the required tools and services. There's more than one way to create one, that's why it's important to understand the concepts, so that you can apply them using whatever tools you (or your employer) prefer.</p>
-    <br>
-    <p>In my case I've chosen some tools that are:<ol>
+    <hr>
+    <p id="hrtag"> Our aim is to demonstrate that you know the concepts of a CI/CD pipeline and common architecture, as well as building practical experience with the required tools and services.<br><br>There's more than one way to create one, that's why it's important to understand the concepts, so that you can apply them using whatever tools you (or your employer) prefer.</p>
+    <hr>
+    <p>In our case I've chosen some tools that are:<ol>
         <li>Available through AWS/GCP</li>
         <li>Free/Cheap</li>
-        <li>Easy</li>
-    </ol>But the concepts are just the same as if I were using any industry standard tools.</p>
-    
+        <li>Easy to grasp</li>
+    </ol>But the concepts are just the same as if I were using any industry standard tools, and going through this process will give you much better context and experience when speaking to employers.</p>
     <br>
-    
     <p>So let's break down the plan a bit further. If you follow a full development lifecycle you would do some planning, including planning your architecture. A modern approach is to design your app's using a multi-tier architecture, with each app component residing in it's own subnet, with firewall rules managing ingress and egress traffic - this isn't a new concept to you, it's just the next step in a micro-service architecture. Typically you might have:<ul>
         <li>Presentation tier - (web tier) typically a webpage or webapp, this is where the end user interacts with and initiates your application. If required, user inputs and options can be gathered here, and passed through to the next tier</li>
         <li>Application tier - (processing tier) this is where the work of the app is done. It may receive inputs, data, variables, etc. from the Presentation tier to work with. This tier may connect to the next tier to store or retrieve data.</li>
         <li>Data tier - (database tier) this is the app's data storage, often a database, but could be pretty much any data source.</li>
     </ul>Not every application needs every tier. If your app just stores and retrieves data you may not need any processing in the middle; if your app just receives, processes, and returns data, you may not need a separate storage tier.</p>
-
+    <hr>
     <p>We're going to focus upon 2x tiers, Presentation and Application. If you're feeling ambitious, feel free to plan for a Data tier too, in fact I'd encourage it. But you'll find it difficult, and you'll gain a renewed appreciation for why Solution Architects, Software Developers, and Database Adminstrators are separate job roles!!!</p>
-    
-    <p>We've started our Presentation tiers with your websites, and the most relevant options for hosting them are of course <a href="https://aws.amazon.com/s3/">Amazon S3</a> or GCP <a href="https://cloud.google.com/storage?hl=en">Cloud Storage</a>. Our application tiers can start with simple 'hello-world' functions, again using the platform specific options, <a href="https://aws.amazon.com/lambda/">Lambda</a> or <a href="https://cloud.google.com/functions?hl=en">Cloud Functions</a>. Once these are in place we need to connect them, with means we'll also need an API. Conveniently/Confusingly, both platforms call their respective services API Gateway, here is <a href="https://cloud.google.com/api-gateway">GCP's</a> and here is <a href="https://aws.amazon.com/api-gateway/">AWS's</a>.</p>
-
-    <p>A website and a function don't make a pipeline, so we need to automate the process of deploying updates. As we mentioned on the slides, we're going to use a GitHub repository for our code, and to track changes. Then we'll use <a href="https://github.com/features/actions">GitHub Actions</a> to automate our 'update website' workflow. GitHub Actions provides 2000 free minutes per month, which is plenty.</p>
-
-    <p>Steps:<ul>
-        <li>Create repository and upload html/css/media</li>
+    <hr>
+    <p>We've started our Presentation tiers with your websites, and the most relevant options for hosting them are of course <a href="https://aws.amazon.com/s3/">Amazon S3</a> or GCP <a href="https://cloud.google.com/storage?hl=en">Cloud Storage</a>.<br><br>Our application tiers can start with simple 'hello-world' functions, again using the platform specific options, <a href="https://aws.amazon.com/lambda/">Lambda</a> or <a href="https://cloud.google.com/functions?hl=en">Cloud Functions</a>.<br><br>Once these are in place we need to connect them, with means we'll also need an API. Conveniently/Confusingly, both platforms call their respective services API Gateway, here is <a href="https://cloud.google.com/api-gateway">GCP's</a> and here is <a href="https://aws.amazon.com/api-gateway/">AWS's</a>.<br><br>A website and a function don't make a pipeline, so we need to automate the process of deploying updates. As we mentioned on the slides, we're going to use a GitHub repository for our code, and to track changes. Then we'll use <a href="https://github.com/features/actions">GitHub Actions</a> to automate our 'update website' workflow. GitHub Actions provides 2000 free minutes per month, which is plenty.</p>
+    <hr>
+    <p>Next steps:<ol>
+        <li>Create repository and upload html/css/media files</li>
         <li>Create a .github/workflows directory in your repository.</li>
-        <li>Create a YAML file in the new directory (e.g., deploy.yml) to define your workflow.</li>
-        <li>Use AI to help, or Ask Ant for his as a template.</li>
-        <li>Ensure you understand what is happening so you can explain it to an employer.</li>
-    </ul></p> 
+        <li>Create a YAML file in the new directory (e.g., deploy.yml) to define your workflow. Use AI to help generate the deployment file, or ask Ant for his as a template.</li>
+        <li>Continue developing your website, committing your changes to your repository as you would in the workplace.</li>
+        <li>Create a webform with a submit button on your site which calls your API, which in turn calls your function.</li>
+    </ol>When you reach this point you have a complete, albeit basic, CI/CD pipeline. You should ensure that you can explain what you've done, and think about how you can improve it.</p> 
     <br> 
-    <p>blah</p>
-    <br>
-    <p>When added between the head tags it looks like this:</p>
-
-
-
-
-    <img src="media/internalcss.JPG" alt="an exmaple of an internal style rule" width="300">
+    <p>This is what your architecture will look like [IMG]</p>
+  
+    <img src="media/form_elements.jpg" alt="an exmaple of an internal style rule" width="300">
    
-
     <p class="rules">You might have spotted a problem with the CSS rules. What if we wanted to apply rules to individual elements, rather than all h1 elements, or all divs. To do this we assign a CSS class to our html tags, and then refer to those tags in our CSS rules declared in the head block. These images below show the div tags with classes, the CSS rules with class selectors, and the different output in the browser:</p>
        
     <hr>

@@ -22,19 +22,13 @@ p {
 /* CSS id Selectors */
 
 #hrtag {
-    color: yellow;
-    text-transform: uppercase;
+    color: rgb(0, 0, 0);
 }
 
 /* CSS class Selectors */
 
 .rules {
-    color: blue;
-    padding: 50px; 
-}
-
-.rules {
-    color: blue;
+    color: rgb(0, 0, 0);
     padding: 50px; 
 }
 
@@ -43,7 +37,6 @@ p {
     flex-wrap: wrap;
     justify-content: space-around;
 }
-
 
 .navbar {
     display: flex;
