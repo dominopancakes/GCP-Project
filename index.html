@@ -18,13 +18,15 @@
         <div><a href="#">Home</a></div>
         <div><a href="#">About</a></div>
         <div><a href="#">Contact</a></div>
-        <div><a href="http://www.longboyscout.com">Scout's page</a></div>
+        <div><a href="http://frankiethesausage.co.uk">Frankie's page</a></div>
     </div>
 
     <h1>Welcome to Scout's website, it's just like Frankie's but a little looooonger</h1>
+    <img src="media/scout.png" alt="an exmaple of an internal style rule" height="350">
+    <img src="media/two-saus.png" alt="an exmaple of an internal style rule" height="350">
     <h2>Since Frankie covered the HTML tag basics, I'll talk about the next steps in your project.</h2>
     <hr>
-    <p id="hrtag"> Our aim is to demonstrate that you know the concepts of a CI/CD pipeline and common architecture, as well as building practical experience with the required tools and services.<br><br>There's more than one way to create one, that's why it's important to understand the concepts, so that you can apply them using whatever tools you (or your employer) prefer.</p>
+    <p id="hrtag"> Our aim is to demonstrate that you know the concepts of a CI/CD pipeline and common architecture, as well as building practical experience with the required tools and services.<br><img src="media/pipeline.png" alt="an exmaple of an internal style rule" height="400"><br>There's more than one way to create one, that's why it's important to understand the concepts, so that you can apply them using whatever tools you (or your employer) prefer.</p>
     <hr>
     <p>In our case I've chosen some tools that are:<ol>
         <li>Available through AWS/GCP</li>
@@ -40,7 +42,7 @@
     <hr>
     <p>We're going to focus upon 2x tiers, Presentation and Application. If you're feeling ambitious, feel free to plan for a Data tier too, in fact I'd encourage it. But you'll find it difficult, and you'll gain a renewed appreciation for why Solution Architects, Software Developers, and Database Adminstrators are separate job roles!!!</p>
     <hr>
-    <p>We've started our Presentation tiers with your websites, and the most relevant options for hosting them are of course <a href="https://aws.amazon.com/s3/">Amazon S3</a> or GCP <a href="https://cloud.google.com/storage?hl=en">Cloud Storage</a>.<br><br>Our application tiers can start with simple 'hello-world' functions, again using the platform specific options, <a href="https://aws.amazon.com/lambda/">Lambda</a> or <a href="https://cloud.google.com/functions?hl=en">Cloud Functions</a>.<br><br>Once these are in place we need to connect them, with means we'll also need an API. Conveniently/Confusingly, both platforms call their respective services API Gateway, here is <a href="https://cloud.google.com/api-gateway">GCP's</a> and here is <a href="https://aws.amazon.com/api-gateway/">AWS's</a>.<br><br>A website and a function don't make a pipeline, so we need to automate the process of deploying updates. As we mentioned on the slides, we're going to use a GitHub repository for our code, and to track changes. Then we'll use <a href="https://github.com/features/actions">GitHub Actions</a> to automate our 'update website' workflow. GitHub Actions provides 2000 free minutes per month, which is plenty.</p>
+    <p>We've started our Presentation tiers with your websites, and the most relevant options for hosting them are of course <a href="https://aws.amazon.com/s3/">Amazon S3</a> or GCP <a href="https://cloud.google.com/storage?hl=en" height="200">Cloud Storage</a>.<br><img src="media/S3-Logo.png" alt="an exmaple of an internal style rule" height="200"><img src="media/cloud-Storage-Logo.png" alt="an exmaple of an internal style rule" height="200"><br>Our application tiers can start with simple 'hello-world' functions, again using the platform specific options, <a href="https://aws.amazon.com/lambda/">Lambda</a> or <a href="https://cloud.google.com/functions?hl=en">Cloud Functions</a>.<br><img src="media/cloud-functions-Logo.png" alt="an exmaple of an internal style rule" height="200"><img src="media/lambda-icon.png" alt="an exmaple of an internal style rule" height="200"><br>Once these are in place we need to connect them, in GCP you'll receive a URL to call your function, which can be embedded into your HTML. In AWS you'll need to deploy an API using <a href="https://aws.amazon.com/api-gateway/">API Gateway</a>.<br><br>A website and a function don't make a pipeline, so we need to automate the process of deploying updates. As we mentioned on the slides, we're going to use a GitHub repository for our code, and to track changes. Then we'll use <a href="https://github.com/features/actions">GitHub Actions</a> to automate our 'update website' workflow. GitHub Actions provides 2000 free minutes per month, which is plenty.</p><img src="media/github-actions-logo.png" alt="an exmaple of an internal style rule" height="200">
     <hr>
     <p>Next steps:<ol>
         <li>Create repository and upload html/css/media files</li>
@@ -52,7 +54,6 @@
     <br> 
     <p>This is what your architecture will look like [IMG]</p>
   
-    <img src="media/form_elements.jpg" alt="an exmaple of an internal style rule" width="300">
    
     <p class="rules">You might have spotted a problem with the CSS rules. What if we wanted to apply rules to individual elements, rather than all h1 elements, or all divs. To do this we assign a CSS class to our html tags, and then refer to those tags in our CSS rules declared in the head block. These images below show the div tags with classes, the CSS rules with class selectors, and the different output in the browser:</p>
        
